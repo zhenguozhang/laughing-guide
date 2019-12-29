@@ -1,0 +1,12 @@
+﻿################################################################################
+# 此 .gitignore 文件已由 Microsoft(R) Visual Studio 自动创建。
+################################################################################
+
+
+/.vs/*
+/ConsoleApplication145/Debug/*
+/ConsoleApplication145/ConsoleApplication145/Debug/*
+/ConsoleApplication145/ConsoleApplication145/ConsoleApplication145.vcxproj
+/ConsoleApplication145/ConsoleApplication145/ConsoleApplication145.vcxproj.filters
+/ConsoleApplication145/ConsoleApplication145/ConsoleApplication145.vcxproj.user
+/ConsoleApplication145/.vs/ConsoleApplication145/v15/Browse.VC.opendb
