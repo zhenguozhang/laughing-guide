@@ -8,7 +8,7 @@
 #include<iomanip>
 
 using namespace std;
-//AS
+
 
 
 //检验输入边数和顶点数的值是否有效，可以自己推算为啥：
