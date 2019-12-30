@@ -10,3 +10,5 @@
 # /ConsoleApplication145/ConsoleApplication145/ConsoleApplication145.vcxproj.filters
 # /ConsoleApplication145/ConsoleApplication145/ConsoleApplication145.vcxproj.user
 /ConsoleApplication145/.vs/*
+/ConsoleApplication145/x64/*
+/ConsoleApplication145/ConsoleApplication145/x64/*
