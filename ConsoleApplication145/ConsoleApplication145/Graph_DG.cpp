@@ -57,7 +57,7 @@ void Graph_DG::createGraph() {
 			cout << "输入的边的信息不合法，请重新输入" << endl;
 			fin >> start >> end >> weight;
 		}
-		cout << "何澳" << endl;
+		
 		//对邻接矩阵对应上的点赋值
 		arc[start - 1][end - 1] = weight;
 		//无向图添加上这行代码
