@@ -108,6 +108,7 @@ void Graph_DG::print() {
 void Graph_DG::Dijkstra(int begin) {
 	//首先初始化我们的dis数组
 	int i;
+	cout << "zhangzhenguo" << endl;
 	for (i = 0; i < this->vexnum; i++) {
 		//设置当前的路径
 		//dis[i].path = to_string(route_number[begin - 1]) + to_string(route_number[i]);
