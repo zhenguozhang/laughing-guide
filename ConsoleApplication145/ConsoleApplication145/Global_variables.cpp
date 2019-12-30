@@ -7,3 +7,4 @@
 using namespace std;
 ifstream fin;
 int * route_number;
+//jklj¡¢

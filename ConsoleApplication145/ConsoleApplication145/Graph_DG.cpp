@@ -9,10 +9,11 @@
 #include<iomanip>
 using namespace std;
 
-//何澳
+
 
 // 构造函数
 Graph_DG::Graph_DG(int vexnum, int edge) {
+
 	//初始化顶点数和边数
 	this->vexnum = vexnum;
 	this->edge = edge;
@@ -26,7 +27,7 @@ Graph_DG::Graph_DG(int vexnum, int edge) {
 			arc[i][k] = INT_MAX;
 		}
 	}
-}
+} //第一
 //析构函数
 Graph_DG::~Graph_DG() {
 	delete[] dis;
@@ -57,6 +58,7 @@ void Graph_DG::createGraph() {
 			cout << "输入的边的信息不合法，请重新输入" << endl;
 			fin >> start >> end >> weight;
 		}
+
 		//对邻接矩阵对应上的点赋值
 		arc[start - 1][end - 1] = weight;
 		//无向图添加上这行代码
@@ -109,9 +111,12 @@ void Graph_DG::Dijkstra(int begin) {
 	int i;
 	for (i = 0; i < this->vexnum; i++) {
 		//设置当前的路径
-		dis[i].path = to_string(route_number[begin - 1]) + to_string(route_number[i]);
+		//dis[i].path = to_string(route_number[begin - 1]) + to_string(route_number[i]);
+		dis[i].path.push_back(route_number[begin - 1]);
+		dis[i].path.push_back(route_number[i]);
 		dis[i].value = arc[begin - 1][i];
 	}
+	cout << "张振国" << endl;
 	//设置起点的到起点的路径为0
 	dis[begin - 1].value = 0;
 	dis[begin - 1].visit = true;
@@ -138,12 +143,16 @@ void Graph_DG::Dijkstra(int begin) {
 			if (!dis[i].visit && arc[temp][i] != INT_MAX && (dis[temp].value + arc[temp][i]) < dis[i].value) {
 				//如果新得到的边可以影响其他为访问的顶点，那就就更新它的最短路径和长度
 				dis[i].value = dis[temp].value + arc[temp][i];
-				dis[i].path = dis[temp].path + to_string(route_number[i]);
+				//dis[i].path = dis[temp].path + to_string(route_number[i]);
+				dis[i].path = dis[temp].path;
+				dis[i].path.push_back(route_number[i]);
+
 			}
 		}
 	}
 
 }
+/*
 void Graph_DG::print_path(int begin) {
 	string str;
 	str = "v" + to_string(begin);
@@ -156,15 +165,18 @@ void Graph_DG::print_path(int begin) {
 		}
 	}
 }
+*/
 void Graph_DG::print_route(int)
 {
 	cout << " 目标路由器       下一跳" << endl;
 	for (int i = 0; i != this->vexnum; i++) {
 		if (dis[i].value != INT_MAX)
-			cout << setw(3) << dis[i].path.substr(dis[i].path.length() - 1, 1) << setw(18) << dis[i].path.substr(1, 1) << endl;
+			cout << setw(3) << dis[i].path.back() << setw(18) << dis[i].path[1] << endl;
 		else {
-			cout << setw(3) << dis[i].path.substr(dis[i].path.length() - 1, 1) << setw(18) << "*" << endl;
+			cout << setw(3) << dis[i].path.back() << setw(18) << "*" << endl;
 		}
 	}
 
 }
+
+//sahkjfbkj
