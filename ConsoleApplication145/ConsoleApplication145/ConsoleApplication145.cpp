@@ -1,7 +1,7 @@
 ﻿#include"pch.h"
 #include"Graph_DG.h"
 #include"Global_variables.h"
-#include"change.h"
+#include"chang.h"
 #include<iostream>
 #include<string>
 #include<fstream>
@@ -18,9 +18,12 @@ bool check(int Vexnum, int edge) {
 		return false;
 	return true;
 }
+void show() {
+	
+}
 
 int main() {
-	fin.open("test.txt", ios::in);
+	fin.open("testt.txt", ios::in);
 	if (!fin)
 	{
 		cout << "Fail to open the file!" << endl;
@@ -36,27 +39,40 @@ int main() {
 		cout << "输入的数值不合法，请重新输入" << endl;
 		cin >> vexnum >> edge;
 	}
+
+
 	Graph_DG graph(vexnum, edge);
 	graph.createGraph();
 
 	while (1) {
+			
 		cout << "请选择您想选择的项目" << endl;
 		cout << "1.增加点      2删除点        3.显示路由表" << endl;
 		cout << "4.增加边      5删除边        6.退出" << endl;
 		cout << "7.显示矩阵表" << endl;
 		int choice;
 		int rou_num;
+		int m = 0;
+		int flag = 1;
 		cin >> choice;
 		if (choice == 1)  add_point(graph);
-		if (choice == 2) { delete_point(graph); cout << graph.arc[2][3] << endl; }
+		if (choice == 2) { delete_point(graph); }
 		if (choice == 3)
 		{
 			cout << "请输入您想查看的路由器号" << endl;
-			
+
 			cin >> rou_num;
-			graph.Dijkstra(rou_num);
-			graph.print_route(rou_num);
-			//graph.print_path(rou_num);
+			for (; m < graph.vexnum; m++) {
+				if (route_number[m] == rou_num) { flag = 0; break; }
+			}
+				if (flag == 0) {
+					rou_num = m + 1;
+					graph.Dijkstra(rou_num);
+					graph.print_route(rou_num);
+					//graph.print_path(rou_num);
+				}
+				else { cout << "该路由器号不存在，请重新输入" << endl; }
+			
 		}
 		if (choice == 4)  add_edge(graph);
 		if (choice == 5) delete_edge(graph);
@@ -71,5 +87,4 @@ int main() {
 }
 
 
-
-
+	

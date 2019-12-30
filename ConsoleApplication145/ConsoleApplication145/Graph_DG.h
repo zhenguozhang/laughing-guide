@@ -1,15 +1,16 @@
 #pragma once
 #include<string>
+#include<vector>
 #include"Global_variables.h"
 using namespace std;
 struct Dis {
-	string path;
+	vector<int> path;
 	int value;
 	bool visit;
 	Dis() {
 		visit = false;
 		value = 0;
-		path = "";
+		vector<int>path;
 	}
 };
 
@@ -32,7 +33,6 @@ public:
 	//创建图
 	void createGraph();
 	void createGraph(int n, Graph_DG & graph1);
-	void createGraph(int n);
 	//打印邻接矩阵
 	void print();
 	//求最短路径
@@ -41,3 +41,4 @@ public:
 	void print_path(int);
 	void print_route(int);
 };
+//sdad
