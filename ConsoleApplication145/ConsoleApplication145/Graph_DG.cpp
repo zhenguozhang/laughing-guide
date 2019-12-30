@@ -9,7 +9,7 @@
 #include<iomanip>
 using namespace std;
 
-
+//何澳
 
 // 构造函数
 Graph_DG::Graph_DG(int vexnum, int edge) {
