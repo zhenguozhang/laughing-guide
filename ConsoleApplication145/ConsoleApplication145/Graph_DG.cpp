@@ -67,16 +67,17 @@ void Graph_DG::createGraph() {
 	}
 }
 void Graph_DG::createGraph(int n, Graph_DG &graph1) {
-	for (int start = 0; start < vexnum;start++) {
+	for (int start = 0; start < vexnum; start++) {
 		for (int end = 0; end < vexnum; end++) {
 			if (start == n || end == n) {}
 			else {
 				if (start > n&end > n) {
-				graph1.arc[start-1][end-1] = arc[start][end];
-			}
-				if (start > n&end < n) { graph1.arc[start-1][end] = arc[start][end]; 
+					graph1.arc[start - 1][end - 1] = arc[start][end];
 				}
-				if (start < n&end > n) { graph1.arc[start][end-1] = arc[start][end]; }
+				if (start > n&end < n) {
+					graph1.arc[start - 1][end] = arc[start][end];
+				}
+				if (start < n&end > n) { graph1.arc[start][end - 1] = arc[start][end]; }
 				if (start < n&end < n) {
 					graph1.arc[start][end] = arc[start][end];
 				}
@@ -93,9 +94,9 @@ void Graph_DG::print() {
 	int i = 0;
 	while (count_row != this->vexnum) {
 		count_col = 0;
-		cout << route_number[count_row]<<":   ";
+		cout << route_number[count_row] << ":   ";
 		while (count_col != this->vexnum) {
-			
+
 			if (arc[count_row][count_col] == INT_MAX)
 				cout << "¡Þ" << " ";
 			else
