@@ -9,7 +9,7 @@ using namespace std;
 
 void delete_point(Graph_DG &graph) {
 	cout << "请输入您想减少的路由号" << endl;
-	
+	cout << "zhaozepeng" << endl;
 	fin.clear();//必须先调用这个，清除flag
 	fin.seekg(0);//才能用这个设定到文件开头
 
