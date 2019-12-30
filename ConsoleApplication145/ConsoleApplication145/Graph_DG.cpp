@@ -26,7 +26,9 @@ Graph_DG::Graph_DG(int vexnum, int edge) {
 			arc[i][k] = INT_MAX;
 		}
 	}
+	cout << "ºÎ°Ä" << endl;
 }
+
 //Îö¹¹º¯Êý
 Graph_DG::~Graph_DG() {
 	delete[] dis;
